@@ -85,4 +85,15 @@
 
     // Confetti 🎉
     for (let i = 0; i < 100; i++) {
-      const confetti = document.createElement(
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = Math.random() * window.innerWidth + "px";
+      confetti.style.backgroundColor = ["red","pink","white","gold"][Math.floor(Math.random()*4)];
+      confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(confetti);
+    }
+  });
+</script>
+
+</body>
+</html>
