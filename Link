@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Be My Valentine 💖</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: pink;
+      text-align: center;
+      padding-top: 100px;
+      overflow: hidden;
+    }
+
+    button {
+      font-size: 22px;
+      padding: 15px 35px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      margin: 20px;
+    }
+
+    #yes {
+      background: red;
+      color: white;
+    }
+
+    #no {
+      background: white;
+      color: black;
+      position: absolute;
+    }
+
+    #loveMessage {
+      display: none;
+      font-size: 28px;
+      color: darkred;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      top: -10px;
+      animation: fall 3s linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Hey my love 💕</h1>
+<h2>Will you be my Valentine? 🥺💘</h2>
+
+<button id="yes">YES 💖</button>
+<button id="no">NO 😈</button>
+
+<div id="loveMessage">
+  You are officially my Valentine! ❤️  
+  I love you more than chocolates, roses, and everything in the world 😘  
+</div>
+
+<script>
+  // NO button runs away 😈
+  const noBtn = document.getElementById("no");
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  });
+
+  // YES button magic 💖
+  const yesBtn = document.getElementById("yes");
+  yesBtn.addEventListener("click", () => {
+    document.getElementById("loveMessage").style.display = "block";
+    alert("YAY! You are my Valentine forever ❤️😘");
+
+    // Confetti 🎉
+    for (let i = 0; i < 100; i++) {
+      const confetti = document.createElement(
